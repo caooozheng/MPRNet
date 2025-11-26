@@ -21,7 +21,7 @@ import yaml
 from pathlib import Path
 
 # 使用编号为1的GPU
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 # 设置随机种子
 def seed_everything(seed):
