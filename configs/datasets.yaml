@@ -1,0 +1,30 @@
+#### ALL DATASET RESIZED TO 256x256 训练数据集####
+EUVP-d:
+  train_root: UnderWaterDataset/EUVP-Dark/train/
+  val_root: UnderWaterDataset/EUVP-Dark/val/
+  datasize: 256
+  resize: false
+
+EUVP-s:
+  train_root: UnderWaterDataset/EUVP-Scene/train/
+  val_root: UnderWaterDataset/EUVP-Scene/val/
+  datasize: 256
+  resize: true
+
+UIEB:
+  train_root: UnderWaterDataset/UIEB/train/
+  val_root: UnderWaterDataset/UIEB/val/
+  datasize: 256
+  resize: true
+
+UFO:
+  train_root: UnderWaterDataset/UFO-120/train/
+  val_root: UnderWaterDataset/UFO-120/val/
+  datasize: 256
+  resize: true
+
+LSUI:
+  train_root: UnderWaterDataset/LSUI/train/
+  val_root: UnderWaterDataset/LSUI/val/
+  datasize: 256
+  resize: true
