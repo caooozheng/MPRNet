@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 from utils.dataset import get_loader
 from model import myModel
-from datetime import datetime
+#from datetime import datetime
 
 from utils.loss_funcs import PerceptualLoss, L1_Charbonnier_loss, SSIMLoss, EdgeAwareLoss
 from utils.metrics import Evaluator
@@ -49,8 +49,8 @@ class Trainer(object):
         ###-----------end-----------------------###
 
         ###-------------创建输出目录, 保存模型-------------------###
-        now_str = datetime.now().strftime("%Y%m%d-%H%M%S")
-        print("the time is: ",now_str)
+        # now_str = datetime.now().strftime("%Y%m%d-%H%M%S")
+        # print("the time is: ",now_str)
         self.model_save_path = os.path.join(args.save_path, args.model_name, args.dataset)
         if not os.path.exists(self.model_save_path):
             os.makedirs(self.model_save_path)
@@ -276,12 +276,12 @@ def main():
 
     parser.add_argument("--num_workers", type=int, default=4)
 
-    parser.add_argument("--dataset", type=str, default="UFO", choices=["UIEB", "LSUI", 'UFO', 'EUVP-s', 'EUVP-d'])
-    parser.add_argument("--model_name", type=str, default="WWE-UIE")
-    parser.add_argument("--save_path", type=str, default="./output/")
+    parser.add_argument("--dataset", type=str, default="UIEB", choices=["UIEB", "LSUI", 'UFO', 'EUVP-s', 'EUVP-d'])
+    parser.add_argument("--model_name", type=str, default="WWE-UIE",help="model name")
+    parser.add_argument("--save_path", type=str, default="./output/",help="save path")
 
-    parser.add_argument("--resume", type=str)
-    parser.add_argument("--gpu_id", type=str, default="0")
+    parser.add_argument("--resume", type=str,help="resume from checkpoint")
+    parser.add_argument("--gpu_id", type=str, default="0",help="Use the GPU id")
 
     args = parser.parse_args()
 
