@@ -20,8 +20,6 @@ from model_repos.CIDNet.CIDNet import CIDNet
 import yaml
 from pathlib import Path
 
-# 使用编号为1的GPU
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 # 设置随机种子
 def seed_everything(seed):
@@ -278,13 +276,17 @@ def main():
 
     parser.add_argument("--num_workers", type=int, default=4)
 
-    parser.add_argument("--dataset", type=str, default="UIEB", choices=["UIEB", "LSUI", 'UFO', 'EUVP-s', 'EUVP-d'])
+    parser.add_argument("--dataset", type=str, default="UFO", choices=["UIEB", "LSUI", 'UFO', 'EUVP-s', 'EUVP-d'])
     parser.add_argument("--model_name", type=str, default="WWE-UIE")
     parser.add_argument("--save_path", type=str, default="./output/")
 
     parser.add_argument("--resume", type=str)
+    parser.add_argument("--gpu_id", type=str, default="0")
 
     args = parser.parse_args()
+
+    #指定使用的GPU
+    os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu_id
 
     trainer = Trainer(args)
     trainer.training()
