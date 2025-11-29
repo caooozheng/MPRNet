@@ -217,9 +217,9 @@ class GrayWorldRetinex(nn.Module):
         return x_out
 
 
-class myModel(nn.Module):
+class MyModel(nn.Module):
     def __init__(self, in_channels=3, feature_channels=32, use_white_balance=False):
-        super(myModel, self).__init__()
+        super(MyModel, self).__init__()
         self.use_white_balance = use_white_balance
 
         ###---------------启用白平衡先验(Model1)---------------------###

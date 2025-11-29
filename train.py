@@ -11,8 +11,9 @@ import torch.optim as optim
 from tqdm import tqdm
 
 from utils.dataset import get_loader
-from model import myModel
-#from datetime import datetime
+from model import MyModel
+from new_model import NewModel
+from datetime import datetime
 
 from utils.loss_funcs import PerceptualLoss, L1_Charbonnier_loss, SSIMLoss, EdgeAwareLoss
 from utils.metrics import Evaluator
@@ -38,7 +39,7 @@ class Trainer(object):
         """
         self.args = args
         self.evaluator = Evaluator()
-        self.model = (myModel(in_channels=3, feature_channels=32, use_white_balance=True)
+        self.model = (NewModel(in_channels=3, feature_channels=32, use_white_balance=True)
                       .to('cuda'))
 
         ###----------- HVI网络加载 --------------###
@@ -281,7 +282,7 @@ def main():
     parser.add_argument("--save_path", type=str, default="./output/",help="save path")
 
     parser.add_argument("--resume", type=str,help="resume from checkpoint")
-    parser.add_argument("--gpu_id", type=str, default="0",help="Use the GPU id")
+    parser.add_argument("--gpu_id", type=str, default="1",help="Use the GPU id")
 
     args = parser.parse_args()
 

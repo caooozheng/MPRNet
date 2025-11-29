@@ -11,12 +11,13 @@ from utils.dataset import get_loader
 from model import myModel
 from utils.metrics import Evaluator
 from utils.utils import store_restored
+from new_model import NewModel
 
 class Tester(object):
     def __init__(self, args):
         self.args = args
         self.evaluator = Evaluator()
-        self.deep_model = myModel(
+        self.deep_model = NewModel(
             in_channels=3, feature_channels=32, use_white_balance=True
         )
 

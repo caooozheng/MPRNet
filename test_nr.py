@@ -10,6 +10,7 @@ from PIL import Image
 
 from utils.dataset import get_loader
 from model import myModel
+from new_model import NewModel
 from utils.metrics import Evaluator
 from model_repos.uranker.uranker_utils import build_model, get_option
 import warnings
