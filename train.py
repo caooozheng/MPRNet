@@ -49,9 +49,9 @@ class Trainer(object):
         ###-----------end-----------------------###
 
         ###-------------创建输出目录, 保存模型-------------------###
-        # now_str = datetime.now().strftime("%Y%m%d-%H%M%S")
-        # print("the time is: ",now_str)
-        self.model_save_path = os.path.join(args.save_path, args.model_name, args.dataset)
+        now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print("the time is: ",now_str)
+        self.model_save_path = os.path.join(args.save_path, args.model_name, now_str, args.dataset)
         if not os.path.exists(self.model_save_path):
             os.makedirs(self.model_save_path)
         ###----------------------end--------------------------###
