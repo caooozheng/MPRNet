@@ -8,7 +8,6 @@ from tqdm import tqdm
 from thop import profile, clever_format
 
 from utils.dataset import get_loader
-from model import myModel
 from utils.metrics import Evaluator
 from utils.utils import store_restored
 from new_model import NewModel

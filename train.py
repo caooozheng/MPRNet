@@ -11,7 +11,6 @@ import torch.optim as optim
 from tqdm import tqdm
 
 from utils.dataset import get_loader
-from model import MyModel
 from new_model import NewModel
 from datetime import datetime
 

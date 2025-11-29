@@ -9,7 +9,6 @@ from thop import profile, clever_format
 from PIL import Image
 
 from utils.dataset import get_loader
-from model import myModel
 from new_model import NewModel
 from utils.metrics import Evaluator
 from model_repos.uranker.uranker_utils import build_model, get_option
@@ -21,7 +20,7 @@ class Tester(object):
     def __init__(self, args):
         self.args = args
 
-        self.deep_model = myModel(
+        self.deep_model = NewModel(
             in_channels=3, feature_channels=32, use_white_balance=True
         )
 
