@@ -124,9 +124,9 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="output/WWE-UIE/UIEB/best_model.pth",
+        default="output/WWE-UIE/UIEB/2025-12-02 19:14:20/best_model.pth",
     )
-    parser.add_argument("--dataset", type=str, default="U45")
+    parser.add_argument("--dataset", type=str, default="CH60")
 
     args = parser.parse_args()
 

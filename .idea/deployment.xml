@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="lizhongtao@172.16.227.5:22 password (8)" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="lizhongtao@172.16.227.5:22 password (10)" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="lizhongtao@172.16.227.5:22 password">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="lizhongtao@172.16.227.5:22 password (10)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/lizhongtao/caozheng/uie2" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
@@ -55,6 +62,13 @@
         <serverdata>
           <mappings>
             <mapping deploy="/home/lizhongtao/caozheng/uie" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="lizhongtao@172.16.227.5:22 password (9)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
