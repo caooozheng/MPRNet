@@ -3,6 +3,8 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 
+from our_model.SGFB import BasicBlock
+
 def default_conv(in_channels, out_channels, kernel_size, bias=True):
     return nn.Conv2d(in_channels, out_channels, kernel_size, padding=(kernel_size // 2), bias=bias)
 
@@ -35,6 +37,9 @@ class Attention(nn.Module):
         self.GELU = nn.GELU()
         self.mix1 = Mix(m=-1)
         self.mix2 = Mix(m=-0.6)
+
+        self.basicBlock = BasicBlock(dim, dim, kernel_size=3)
+
     def forward(self, x):
         batch_size, channel, height, width = x.size()
         x_h = self.avg(x)
@@ -60,5 +65,8 @@ class Attention(nn.Module):
         matrix = torch.matmul(x1, x2)
         matrix = torch.sigmoid(matrix)
         final = torch.mul(x, matrix)
+
+        final = self.basicBlock(final)
+
         final = x + final
         return final

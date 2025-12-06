@@ -122,9 +122,10 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="output/WWE-UIE/UIEB/2025-12-02 19:14:20/best_model.pth",
+        default="output/WWE-UIE/UFO/2025-12-05 19:31:29/best_model.pth",
+
     )
-    parser.add_argument("--dataset", type=str, default="UIEB")
+    parser.add_argument("--dataset", type=str, default="UFO")
     parser.add_argument("--test_batch_size", type=int, default=4)
 
     args = parser.parse_args()

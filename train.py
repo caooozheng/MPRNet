@@ -263,7 +263,7 @@ def main():
     parser.add_argument("--epoch", type=int, default=100, help="epoch number")
     parser.add_argument("--epoch_val", type=int, default=1, help="training batch size")
     parser.add_argument("--lr", type=float, default=2e-3, help="learning rate")
-    parser.add_argument("--train_batch_size", type=int, default=24)
+    parser.add_argument("--train_batch_size", type=int, default=12)
     parser.add_argument("--eval_batch_size", type=int, default=24)
     parser.add_argument(
         "--decay_rate", type=float, default=0.1, help="decay rate of learning rate"
@@ -276,7 +276,7 @@ def main():
 
     parser.add_argument("--num_workers", type=int, default=4)
 
-    parser.add_argument("--dataset", type=str, default="UIEB", choices=["UIEB", "LSUI", 'UFO', 'EUVP-s', 'EUVP-d'])
+    parser.add_argument("--dataset", type=str, default="EUVP-d", choices=["UIEB", "LSUI", 'UFO', 'EUVP-s', 'EUVP-d'])
     parser.add_argument("--model_name", type=str, default="WWE-UIE",help="model name")
     parser.add_argument("--save_path", type=str, default="./output/",help="save path")
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="lizhongtao@172.16.227.5:22 password (10)" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="lizhongtao@172.16.227.5:22 password (11)" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="lizhongtao@172.16.227.5:22 password">
         <serverdata>
@@ -13,6 +13,13 @@
         <serverdata>
           <mappings>
             <mapping deploy="/home/lizhongtao/caozheng/uie2" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="lizhongtao@172.16.227.5:22 password (11)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/lizhongtao/caozheng/UIE" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
