@@ -47,7 +47,7 @@ class Tester(object):
         self.deep_model = self.deep_model.to("cuda")
         self.deep_model.eval()
 
-        if args.dataset == "CH60":
+        if  args.dataset == "CH60":
             args.test_root = "UnderWaterDataset/Challenging-60/test/"
         elif args.dataset == "EUVP":
             args.test_root = (
@@ -59,7 +59,7 @@ class Tester(object):
         self.dataloader = get_loader(
             self.args.test_root,
             1,
-            256,
+            512,
             train=False,
             resize=True,
             num_workers=1,
@@ -124,7 +124,7 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="output/WWE-UIE/UFO/2025-12-05 19:31:29/best_model.pth",
+        default="output/WWE-UIE/UIEB/2025-12-08 15:29:36/best_model.pth",
     )
     parser.add_argument("--dataset", type=str, default="CH60")
 

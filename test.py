@@ -38,11 +38,11 @@ class Tester(object):
         if args.dataset == "EUVP-d":  # 256x256
             args.test_root = "UnderWaterDataset/EUVP-Dark/test/"
             args.datasize = 256
-            args.resize = False
+            args.resize = True
         elif args.dataset == "EUVP-s":  # 320x240
             args.test_root = "UnderWaterDataset/EUVP-Scene/test/"
             args.datasize = 256
-            args.resize = False
+            args.resize = True
         elif args.dataset == "UIEB":  # 1280x~800 => 256x256
             args.test_root = "UnderWaterDataset/UIEB/test/"
             args.datasize = 256
@@ -50,7 +50,7 @@ class Tester(object):
         elif args.dataset == "UFO":  # 320x240
             args.test_root = "UnderWaterDataset/UFO-120/test/"
             args.datasize = 256
-            args.resize = False
+            args.resize = True
         elif args.dataset == "LSUI":  # 720x405 => 256x256
             args.test_root = "UnderWaterDataset/LSUI/test/"
             args.datasize = 256
@@ -122,10 +122,10 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="output/WWE-UIE/UFO/2025-12-05 19:31:29/best_model.pth",
+        default="output/WWE-UIE/EUVP-d/2025-12-09 10:25:52/best_model.pth",
 
     )
-    parser.add_argument("--dataset", type=str, default="UFO")
+    parser.add_argument("--dataset", type=str, default="EUVP-d")
     parser.add_argument("--test_batch_size", type=int, default=4)
 
     args = parser.parse_args()

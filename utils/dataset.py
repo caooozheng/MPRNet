@@ -132,30 +132,59 @@ class DatasetFromFolder_NR(data.Dataset):
         self.data_size = data_size
         self.resize = resize
 
+    # def __getitem__(self, index):
+    #     input_img = load_img(self.data_filenames[index])
+    #     _, file = os.path.split(self.data_filenames[index])
+    #
+    #     if self.resize:
+    #         w, h = input_img.size
+    #         if w < h:
+    #             new_w = self.data_size
+    #             new_h = int(h * self.data_size / w)
+    #         else:
+    #             new_h = self.data_size
+    #             new_w = int(w * self.data_size / h)
+    #         input_img = input_img.resize((new_w, new_h), Image.BILINEAR)
+    #
+    #     # comfirm image size is 4's multiple
+    #     w, h = input_img.size
+    #     new_w = (w // 4) * 4
+    #     new_h = (h // 4) * 4
+    #     if (new_w != w) or (new_h != h):
+    #         input_img = input_img.crop((0, 0, new_w, new_h))  # from left-top
+    #
+    #     if self.transform:
+    #         input_img = self.transform(input_img)
+    #
+    #     return input_img, file
+
     def __getitem__(self, index):
         input_img = load_img(self.data_filenames[index])
         _, file = os.path.split(self.data_filenames[index])
 
         if self.resize:
             w, h = input_img.size
+
             if w < h:
                 new_w = self.data_size
                 new_h = int(h * self.data_size / w)
             else:
                 new_h = self.data_size
                 new_w = int(w * self.data_size / h)
+
             input_img = input_img.resize((new_w, new_h), Image.BILINEAR)
 
-        # comfirm image size is 4's multiple
-        w, h = input_img.size
-        new_w = (w // 4) * 4
-        new_h = (h // 4) * 4
-        if (new_w != w) or (new_h != h):
-            input_img = input_img.crop((0, 0, new_w, new_h))  # from left-top
+            pad_w = self.data_size - new_w
+            pad_h = self.data_size - new_h
 
-        if self.transform:
-            input_img = self.transform(input_img)
+            left = pad_w // 2
+            right = pad_w - left
+            top = pad_h // 2
+            bottom = pad_h - top
 
+            input_img = ImageOps.expand(input_img, (left, top, right, bottom), fill=0)
+
+        input_img = self.transform(input_img)
         return input_img, file
 
     def __len__(self):

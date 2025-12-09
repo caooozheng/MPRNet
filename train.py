@@ -262,7 +262,7 @@ def main():
 
     parser.add_argument("--epoch", type=int, default=100, help="epoch number")
     parser.add_argument("--epoch_val", type=int, default=1, help="training batch size")
-    parser.add_argument("--lr", type=float, default=2e-3, help="learning rate")
+    parser.add_argument("--lr", type=float, default=1e-4, help="learning rate")
     parser.add_argument("--train_batch_size", type=int, default=12)
     parser.add_argument("--eval_batch_size", type=int, default=24)
     parser.add_argument(
@@ -281,7 +281,7 @@ def main():
     parser.add_argument("--save_path", type=str, default="./output/",help="save path")
 
     parser.add_argument("--resume", type=str,help="resume from checkpoint")
-    parser.add_argument("--gpu_id", type=str, default="1",help="Use the GPU id")
+    parser.add_argument("--gpu_id", type=str, default="3",help="Use the GPU id")
 
     args = parser.parse_args()
 

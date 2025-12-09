@@ -6,6 +6,7 @@ from our_model.BasicFunc import Downsample
 from our_model.BasicFunc import Upsample
 from our_model.GrayWorldRetinex import GrayWorldRetinex
 from our_model.BasicLayer import BasicLayer
+from our_model.EfficientViMBlock import EfficientViMBlock
 
 
 
