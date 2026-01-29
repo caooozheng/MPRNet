@@ -8,3 +8,8 @@
 # 8. No module named 'thop' --> pip install thop
 # 9. No module named 'matplotlib' --> pip install matplotlib
 # 10 No module named 'timm' --> pip install timm
+# 11. pip install mamba --
+# --->  download:https://visualstudio.microsoft.com/visual-cpp-build-tools/
+#----> pip install triton
+# ---> pip install mamba-ssm
+

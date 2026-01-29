@@ -1,7 +1,7 @@
 水下数据集放在这儿
 ```
 UnderWaterDataset/
-├── EUVP-Dark/
+├── UIEB/
 │   ├── train/
 │   │   ├── input/xxx.png
 │   │   └── GT/xxx.png
@@ -14,5 +14,4 @@ UnderWaterDataset/
 ├── EUVP-Scene/...
 ├── LSUI/...
 ├── UFO-120/...
-└── UIEB/...
 ```
