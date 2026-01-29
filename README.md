@@ -11,11 +11,7 @@
 
 ## Dataset
 The partitioning of our dataset is shown in the README file under UnderWaterDataset
-You can obtain it through www.baidu.com
-
-## model_files
-Some of our models' PTHs are saved here
-You can obtain it through www.baidu.com
+You can obtain it through https://pan.quark.cn/s/dc72523f93d2
 
 ## Train
 
