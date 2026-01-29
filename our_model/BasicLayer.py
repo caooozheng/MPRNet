@@ -13,7 +13,7 @@ class BasicLayer(nn.Module):
 
         self.attn = Attention(feature_channels)
         self.vim = EfficientViMBlock(feature_channels)
-        self.sgfb = SGFB(feature_channels)
+        # self.sgfb = SGFB(feature_channels)
 
         self.routing_gate = nn.Sequential(
             nn.Conv2d(feature_channels * 2, feature_channels // 2, kernel_size=1, bias=False),

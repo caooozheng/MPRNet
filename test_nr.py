@@ -1,5 +1,6 @@
 import argparse
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import time
 import numpy as np
 
@@ -59,7 +60,7 @@ class Tester(object):
         self.dataloader = get_loader(
             self.args.test_root,
             1,
-            512,
+            256,
             train=False,
             resize=True,
             num_workers=1,
@@ -124,7 +125,10 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="output/WWE-UIE/UIEB/2025-12-08 15:29:36/best_model.pth",
+        # default="output/MPRNet/UIEB/2025-12-10 00:28:49/best_model.pth",
+        default="/home/lizhongtao/caozheng/data/MPRNet/UIEB/2025-12-08 15:29:36/best_model.pth",
+        # default="/home/lizhongtao/caozheng/wwe/output/MPRNet/UIEB/20260110_110200/best_model.pth",
+        # default="/home/lizhongtao/caozheng/data/MPRNet/LSUI/2025-12-08 19:57:07/best_model.pth",
     )
     parser.add_argument("--dataset", type=str, default="CH60")
 

@@ -116,20 +116,62 @@ class Tester(object):
 
         return model_info
 
+    # repeat修改为自己的图片数量
+    def measure_runtime(self, repeat=23,batch_size = 4):
+        self.deep_model.eval()
+
+        x = torch.randn(
+            1, 3, self.args.datasize, self.args.datasize
+        ).cuda()
+
+        # -------- warm-up --------
+        with torch.no_grad():
+            for _ in range(50):
+                _ = self.deep_model(x)
+
+        # -------- timing --------
+        torch.cuda.synchronize()
+        start = time.time()
+
+        with torch.no_grad():
+            for _ in range(repeat):
+                _ = self.deep_model(x)
+
+        torch.cuda.synchronize()
+        end = time.time()
+
+        avg_time_ms = (end - start) / repeat / batch_size * 1000
+        print(f"Average inference time: {avg_time_ms:.3f} ms")
+
+        return avg_time_ms
+
+
 def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="output/WWE-UIE/EUVP-d/2025-12-09 10:25:52/best_model.pth",
+        # default="output/MPRNet/UIEB/2025-12-26 12:39:01/best_model.pth",
+        # default="output/MPRNet/UIEB/2026-01-25 21:03:06/best_model.pth",
+        default="output/MPRNet/LSUI/2026-01-26 02:20:10/best_model.pth",
+        # default="output/MPRNet/UFO/2026-01-25 22:22:14/best_model.pth",
+        # default="output/MPRNet/EUVP-s/2026-01-26 00:02:17/best_model.pth",
+
+
+
+        # default="/home/lizhongtao/caozheng/data/MPRNet/UIEB/2025-12-08 15:29:36/best_model.pth",
+        # default="/home/lizhongtao/caozheng/data/MPRNet/LSUI/2025-12-08 19:57:07/best_model.pth",
+        # default="/home/lizhongtao/caozheng/data/MPRNet/UFO/2025-12-08 16:28:23/best_model.pth",
+        # default="/home/lizhongtao/caozheng/data/MPRNet/EUVP-s/2025-12-08 16:28:40/best_model.pth",
 
     )
-    parser.add_argument("--dataset", type=str, default="EUVP-d")
+    parser.add_argument("--dataset", type=str, default="LSUI")
     parser.add_argument("--test_batch_size", type=int, default=4)
 
-    args = parser.parse_args()
 
+    args = parser.parse_args()
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     tester = Tester(args)
 
     start = time.time()
@@ -139,7 +181,7 @@ def main():
     end = time.time()
     print("Testing time:", end - start, "sec")
     model_info["time"] = end - start
-
+    tester.measure_runtime()
 
 if __name__ == "__main__":
     main()

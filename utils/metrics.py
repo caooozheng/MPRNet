@@ -96,7 +96,8 @@ def get_uciqe(image):
     bottom = Minsum / number
 
     conl = top - bottom
-    uciqe = 0.4680 * delta + 0.2745 * conl + 0.2576 * mu
+    # uciqe = 0.4680 * delta + 0.2745 * conl + 0.2576 * mu
+    uciqe = 0.2043 * delta + 0.5364 * conl + 0.2393 * mu
     return uciqe
 
 
