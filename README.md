@@ -11,7 +11,13 @@
 
 ## Dataset
 The partitioning of our dataset is shown in the README file under UnderWaterDataset
-You can obtain it through https://pan.quark.cn/s/dc72523f93d2
+You can obtain it through [datasets](https://pan.quark.cn/s/dc72523f93d2)
+
+## model_files
+You can obtain it through [model_files](https://pan.quark.cn/s/0dadfea6ba6f)
+
+## ours train model
+If you want to quickly test the effectiveness, you can obtain the results of our training here [ours_pth](https://pan.quark.cn/s/e9d1f89c6c1f)
 
 ## Train
 
